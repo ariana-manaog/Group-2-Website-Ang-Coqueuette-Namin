@@ -1,9 +1,30 @@
-# Group-2-Website-Ang-Coqueuette-Namin
-Group 2 Members:
- - Ador Dionisio, Dashiell John P.
- - Barlam, Samantha Maxine N.
- - Chavez, Adrian A.
- - Fernandez, Elisha Denielle S.
- - Manaog, Ariana P.
- - Peñalosa, Adrian Ian U.
- - Tutol, Hector Troy M.
+from flask import Flask, render_template
+
+app = Flask(__name__)
+
+@app.route('/')
+def index():
+    return render_template('index.html')
+
+@app.route('/profile')
+def profile():
+    return render_template('profile.html')
+
+@app.route('/works')
+def works():
+    return render_template('works.html')
+
+@app.route('/contact')
+def contact():
+    return render_template('contacts.html')
+
+@app.route('/queue')
+def queue():
+    return render_template('queue.html')
+
+@app.route('/binarytree')
+def binarytree():
+    return render_template('binarytree.html')
+
+if __name__ == "__main__":
+    app.run(debug=True)
